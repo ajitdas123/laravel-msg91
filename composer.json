@@ -18,19 +18,20 @@
     ],
     "require": {
         "php": "^8.3",
-        "illuminate/contracts": "^12.0||^13.0",
-        "illuminate/http": "^12.0||^13.0",
-        "illuminate/notifications": "^12.0||^13.0",
-        "illuminate/support": "^12.0||^13.0"
+        "guzzlehttp/guzzle": "^7.8",
+        "illuminate/contracts": "^10.48.9||^11.0||^12.0||^13.0",
+        "illuminate/http": "^10.48.9||^11.0||^12.0||^13.0",
+        "illuminate/notifications": "^10.48.9||^11.0||^12.0||^13.0",
+        "illuminate/support": "^10.48.9||^11.0||^12.0||^13.0"
     },
     "require-dev": {
-        "larastan/larastan": "^3.9",
+        "larastan/larastan": "^2.9||^3.0",
         "laravel/pint": "^1.29",
-        "laravel/pao": "^1.0",
-        "orchestra/testbench": "^10.0||^11.0",
-        "pestphp/pest": "^4.6||^5.0",
-        "pestphp/pest-plugin-laravel": "^4.1||^5.0",
-        "pestphp/pest-plugin-type-coverage": "^4.0||^5.0",
+        "orchestra/testbench": "^8.22||^9.0||^10.0||^11.0",
+        "pestphp/pest": "^2.36||^4.6||^5.0",
+        "pestphp/pest-plugin-arch": "^2.7||^4.0||^5.0",
+        "pestphp/pest-plugin-laravel": "^2.4||^4.1||^5.0",
+        "pestphp/pest-plugin-type-coverage": "^2.5||^4.0||^5.0",
         "phpstan/extension-installer": "^1.4"
     },
     "autoload": {

@@ -10,12 +10,12 @@ metadata:
 
 ## Primary Goal
 
-Keep package code, dependencies, and workflows compatible with the supported Laravel 12/13 and PHP 8.3+ matrix.
+Keep package code, dependencies, and workflows compatible with the supported Laravel 10.48+, 11, 12, and 13 matrix on PHP 8.3+.
 
 ## Workflow
 
 1. Read `composer.json` first to determine PHP, Laravel, and Testbench constraints.
-2. Check changed code against Laravel 12/13 APIs and PHP 8.3+ syntax before adopting newer framework or language features.
+2. Check changed code against Laravel 10.48, 11, 12, and 13 APIs and PHP 8.3+ syntax before adopting newer framework or language features. Laravel 10.48 is the oldest release this package can install and test: earlier Laravel 10 releases do not resolve with Orchestra Testbench and the framework HTTP client.
 3. Review `.github/workflows/tests.yml` for dependency stability lanes, prefer-lowest coverage, prefer-stable coverage, and Windows concerns.
 4. When changing dependencies, confirm constraints still allow the intended Laravel and Testbench versions.
 5. Validate with the smallest local command available, then rely on CI for full OS and dependency matrix coverage.
@@ -30,7 +30,7 @@ Keep package code, dependencies, and workflows compatible with the supported Lar
 
 ## Examples
 
-- Review a new Laravel API call by checking whether it exists in Laravel 12 and Laravel 13 before merging it into shared package code.
+- Review a new Laravel API call by checking whether it exists in Laravel 10.48, 11, 12, and 13 before merging it into shared package code.
 - Review a dependency bump by checking Composer constraints, Testbench constraints, prefer-lowest behavior, and Windows path assumptions.
 
 ## Anti-Patterns

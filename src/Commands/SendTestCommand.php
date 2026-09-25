@@ -19,12 +19,10 @@ final class SendTestCommand extends Command
 
     public function handle(Msg91Manager $manager): int
     {
-        $channel = $this->argument('channel');
-        $to = $this->argument('to');
+        $channel = $this->requiredString($this->argument('channel'));
+        $to = $this->requiredString($this->argument('to'));
 
-        if (! is_string($channel) || ! is_string($to)) {
-            $this->components->error('Channel and recipient are required.');
-
+        if ($channel === null || $to === null) {
             return self::FAILURE;
         }
 
@@ -72,6 +70,17 @@ final class SendTestCommand extends Command
         }
 
         $otp->send();
+    }
+
+    private function requiredString(mixed $value): ?string
+    {
+        if (! is_string($value) || $value === '') {
+            $this->components->error('Channel and recipient are required.');
+
+            return null;
+        }
+
+        return $value;
     }
 
     private function optionString(string $key, string $default): string

@@ -14,6 +14,8 @@ Laravel notification channels for MSG91 SMS, WhatsApp and OTP, with fluent messa
 
 ## Installation
 
+Requires PHP 8.3+ and Laravel 10.48, 11, 12, or 13.
+
 You can install the package via Composer:
 
 ```bash

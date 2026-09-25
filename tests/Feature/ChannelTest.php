@@ -33,7 +33,7 @@ it('prefers the phone number on the sms message', function () {
 
     smsNotifiable(null)->notify(new class extends Notification
     {
-        public function via(object $notifiable): array
+        public function via(mixed $notifiable): array
         {
             return ['msg91-sms'];
         }
@@ -59,7 +59,7 @@ it('rejects an sms notification that is missing toMsg91Sms', function () {
 
     expect(fn () => smsNotifiable('9876543210')->notify(new class extends Notification
     {
-        public function via(object $notifiable): array
+        public function via(mixed $notifiable): array
         {
             return ['msg91-sms'];
         }
@@ -71,7 +71,7 @@ it('rejects an sms notification that returns the wrong message', function () {
 
     expect(fn () => smsNotifiable('9876543210')->notify(new class extends Notification
     {
-        public function via(object $notifiable): array
+        public function via(mixed $notifiable): array
         {
             return ['msg91-sms'];
         }
@@ -120,7 +120,7 @@ it('rejects a whatsapp notification that is missing toMsg91Whatsapp', function (
 
     expect(fn () => whatsappNotifiable('9876543210')->notify(new class extends Notification
     {
-        public function via(object $notifiable): array
+        public function via(mixed $notifiable): array
         {
             return ['msg91-whatsapp'];
         }
@@ -132,7 +132,7 @@ it('rejects a whatsapp notification that returns the wrong message', function ()
 
     expect(fn () => whatsappNotifiable('9876543210')->notify(new class extends Notification
     {
-        public function via(object $notifiable): array
+        public function via(mixed $notifiable): array
         {
             return ['msg91-whatsapp'];
         }
@@ -172,7 +172,7 @@ function smsNotification(string $channel = 'msg91-sms'): Notification
     {
         public function __construct(private readonly string $channel) {}
 
-        public function via(object $notifiable): array
+        public function via(mixed $notifiable): array
         {
             return [$this->channel];
         }
@@ -205,7 +205,7 @@ function whatsappNotification(string $channel = 'msg91-whatsapp'): Notification
     {
         public function __construct(private readonly string $channel) {}
 
-        public function via(object $notifiable): array
+        public function via(mixed $notifiable): array
         {
             return [$this->channel];
         }

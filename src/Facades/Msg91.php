@@ -68,6 +68,7 @@ final class Msg91 extends Facade
 
     private static function fakeTransport(): Msg91Fake
     {
+        /** @var mixed $transport */
         $transport = self::getFacadeApplication()->make(Transport::class);
 
         if (! $transport instanceof Msg91Fake) {
