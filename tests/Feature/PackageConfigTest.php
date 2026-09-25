@@ -13,6 +13,8 @@ it('merges package config and lets the app override it', function () {
     expect(config('msg91.driver'))->toBe('log')
         ->and(config('msg91.endpoints.sms'))->toBe('https://control.msg91.com/api/v5/flow/')
         ->and(config('msg91.endpoints.whatsapp'))->toBe('https://control.msg91.com/api/v5/whatsapp/whatsapp-outbound-message/bulk/')
+        ->and(config('msg91.endpoints.whatsapp_session'))->toBe('https://control.msg91.com/api/v5/whatsapp/whatsapp-outbound-message/')
+        ->and(config('msg91.endpoints.whatsapp_balance'))->toBe('https://control.msg91.com/api/v5/subscriptions/fetchPrepaidBalance')
         ->and(config('msg91.endpoints.otp'))->toBe('https://control.msg91.com/api/v5/otp')
         ->and(config('msg91.endpoints.otp_verify'))->toBe('https://control.msg91.com/api/v5/otp/verify')
         ->and(config('msg91.endpoints.otp_retry'))->toBe('https://control.msg91.com/api/v5/otp/retry');

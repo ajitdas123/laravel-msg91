@@ -57,6 +57,48 @@ Msg91::whatsapp()
     ->send();
 ```
 
+Send a WhatsApp session message after the recipient has replied. These do not use a template:
+
+```php
+Msg91::whatsapp()->to('9876543210')->text('Hello')->send();
+
+Msg91::whatsapp()
+    ->to('9876543210')
+    ->buttons('Choose one')
+    ->reply('yes', 'Yes')
+    ->reply('no', 'No')
+    ->send();
+
+Msg91::whatsapp()
+    ->to('9876543210')
+    ->listMessage('Pick a slot', 'Options')
+    ->section('Morning', [
+        ['id' => '9', 'title' => '9 AM', 'description' => 'First slot'],
+    ])
+    ->send();
+
+Msg91::whatsapp()->to('9876543210')->requestLocation('Please share your location')->send();
+
+Msg91::whatsapp()->to('9876543210')->product('catalog_id', 'product_id', 'Blue shirt')->send();
+
+Msg91::whatsapp()
+    ->to('9876543210')
+    ->productList('catalog_id', 'Browse the catalog')
+    ->heading('Shop')
+    ->products('Shoes', 'sku-1', 'sku-2')
+    ->send();
+
+Msg91::whatsapp()
+    ->to('9876543210')
+    ->payment('Complete the payment below.')
+    ->item('Shirt', 499, 1)
+    ->send();
+
+$balance = Msg91::whatsapp()->balance();
+```
+
+`heading()`, `headingImage()`, and `footnote()` add an interactive header or footer. `from()` overrides the configured integrated number.
+
 Send, verify, or resend an OTP:
 
 ```php
