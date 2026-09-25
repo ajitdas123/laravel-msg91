@@ -63,7 +63,7 @@ Thank you for considering contributing to Laravel Msg91! Please review our [cont
 
 ## Credits
 
-- [Ajit Das](https://github.com/ajit-das)
+- [Ajit Das](https://github.com/ajitdas123)
 - [All Contributors](../../contributors)
 
 ## License
